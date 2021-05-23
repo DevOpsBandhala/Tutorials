@@ -1,5 +1,8 @@
 ---
-- hosts: all
+- name: First playbook
+  hosts: all
   tasks:
-    - msg: "...........Hello World !!!!!........"
+    - name: Print welcome note
+      debug:
+        msg: "Hello welcome to Bandhala's tutorial"
 ...
