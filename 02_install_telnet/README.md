@@ -15,5 +15,12 @@ This module lets you execute a shell command on the remote host:
        name: telnet*
        state: installed
 ```
-#### Aurther
+
+#### Sample Output
+
+```bash
+
+
+```
+##### Aurther
   Bandhala Raja S
