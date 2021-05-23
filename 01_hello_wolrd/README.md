@@ -6,6 +6,7 @@ Now we're test and print message.
 
 In linux command line ` echo ` commad used to print message. 
 
+
 ### Ansible modul & sample code 
 
 This module lets you execute a shell command on the remote host:
@@ -18,6 +19,8 @@ This module lets you execute a shell command on the remote host:
 
 
 #### Sample Output
+
+01_hello_wolrd.yml
 
 ```bash
 [root@dc-node1 01_hello_wolrd]# ansible-playbook 01_hello_wolrd.yml
