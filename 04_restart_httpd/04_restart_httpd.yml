@@ -1,18 +1,26 @@
 ---
 - name: Restart apache webserver and change the configuration.
-  hosts: master
+  hosts: webserver
   tasks:
     - name: Change the permission in httpd.conf
       replace:
-        path: /etc/httpd/conf/httpd.conf
-        regexp: "AllowOverride None"
-        replace: "AllowOverride AuthConfig"
-        mode: 0644
+       path: /etc/httpd/conf/httpd.conf
+       regexp: "AllowOverride None"
+       replace: "AllowOverride AuthConfig"
+       mode: 0644
       notify:
        - restart httpd
-  handlers:
-    - name : restart httpd service
+
+    - name: Enable the serive
       service:
-        name: httpd
-        state: restarted
+       name: httpd
+       enabled: yes
+      notify:
+       - restart httpd
+
+  handlers:
+    - name : restart httpd
+      service:
+       name: httpd
+       state: restarted
 ...
