@@ -7,6 +7,7 @@
      yum: 
       name: httpd
       state: installed
+
    - name: Enable the serive
      service:
       name: httpd
@@ -19,7 +20,8 @@
 
    - name: download webpage
      get_url:
-       url: https://github.com/DevOpsBandhala/Tutorials/blob/main/03_install_httpd/index.html
+       url: http://192.168.225.172/test_web/index.html
+       dest: /var/www/html/test_web/index.html
        mode: 0644
 
    - name: Replacing the text in the HTML file
