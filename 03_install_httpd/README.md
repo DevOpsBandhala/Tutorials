@@ -14,10 +14,10 @@ Many webservers are available in Internet. But in linux most of time TomCat apac
 
 ### Repo
 ```bash
-[root@dc-node1 ~]# ls -l /etc/yum.repos.d/ | grep epel
+# ls -l /etc/yum.repos.d/ | grep epel
 -rw-r--r--. 1 root root  951 Oct  2  2017 epel.repo
 -rw-r--r--. 1 root root 1050 Oct  2  2017 epel-testing.repo
-[root@dc-node1 ~]# cat /etc/yum.repos.d/epel.repo
+# cat /etc/yum.repos.d/epel.repo
 [epel]
 name=Extra Packages for Enterprise Linux 7 - $basearch
 #baseurl=http://download.fedoraproject.org/pub/epel/7/$basearch
@@ -44,7 +44,7 @@ failovermethod=priority
 enabled=0
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
 gpgcheck=1
-[root@dc-node1 ~]#
+#
 ```
 
 ### Ansible modul & sample code - Install WebServer
