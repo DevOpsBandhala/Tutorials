@@ -11,7 +11,9 @@ In linux command line ` echo ` commad used to print message.
 This module lets you execute a shell command on the remote host:
 
 ```bash
- - msg: "...........Hello World !!!!!........"
+    - name: Print welcome note
+      debug:
+        msg: "Hello welcome to Bandhala's tutorial"
 ```
 
 
