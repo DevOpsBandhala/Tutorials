@@ -1,9 +1,9 @@
 ---
-- name: Project:1 Install package 
+- name: Install TELNET package from YUM Repo
   hosts: all
   tasks:
-    - name: Install TelNet package
+    - name: Installation play
       yum:
-        name: telnet*
-        state: latest
+       name: telnet*
+       state: installed
 ...

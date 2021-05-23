@@ -1,16 +1,17 @@
-# Ansible 
+# Ansible tutorial: Hello World
 
-## Sample playbook for referance.
+Now we're test and print message.
 
+## Print 
 
-  ```
-  ### 1. Hello world.
-          This playbook just print the Hello world message.  
-          for more information review the 01_hello_world directory.
-  ```
+In linux command line ` echo ` commad used to print message. 
 
+### Ansible modul & sample code 
 
+This module lets you execute a shell command on the remote host:
 
-
-## Aurther
+```bash
+ - msg: "...........Hello World !!!!!........"
+```
+#### Aurther
   Bandhala Raja S
