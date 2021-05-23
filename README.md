@@ -1,15 +1,14 @@
 # Ansible 
 
 ## Sample playbook for referance.
+ 01_hello_wolrd - Simple print hello world\
+ 02_install_telnet - Simple telnet package installation using `YUM` repo \
+ 03_install_httpd - Apache tomcat instllation and upload webpage and update the `Webpage `content.\
+ 04_restart_httpd - Apache tomcat enable `service`, Security Configuretion. \
+ 05_copy_facts -  Add page into `Webserver` node, Add User into `Test` node using `TAG` and `Handler`. \
 
 
-  ```
-  ### 1. Hello world.
-          This playbook just print the Hello world message.  
-          for more information review the 01_hello_world directory.
-  ```
-
-## my ansible core host details 
+## my ansible  host details 
   ```
 # tail /etc/ansible/hosts
 192.168.225.200
