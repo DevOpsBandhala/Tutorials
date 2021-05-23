@@ -87,9 +87,9 @@ Here i used mode key to change the permission of the file.
 
 ### Ansible modul & sample code - Edit and replace index.html
 
-lineinfile  - module can use for change the line on the file. 
-    1. ` path ` is keyword to define the path of the sourcefile.
-    2. ` regexp ` is one the keyword to find the word in the file.
+lineinfile  - module can use for change the line on the file. \
+    1. ` path ` is keyword to define the path of the sourcefile.\
+    2. ` regexp ` is one the keyword to find the word in the file.\
     3. ` line ` here we need to put the replace charater details.
 
 ```bash
