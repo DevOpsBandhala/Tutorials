@@ -1,0 +1,9 @@
+---
+- name: Project:1 Install package 
+  hosts: all
+  tasks:
+    - name: Install TelNet package
+      yum:
+        name: telnet*
+        state: latest
+...

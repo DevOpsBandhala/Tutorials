@@ -1,0 +1,32 @@
+---
+- name: We server Installation
+  hosts: all
+  tasks:
+
+   - name: Install httpd 
+     yum: 
+      name: httpd
+      state: installed
+   - name: Enable the serive
+     service:
+      name: httpd
+      enabled: yes
+
+   - name: create a directory
+     file:
+      path: /var/www/html/test_web
+      state: directory
+
+   - name: download webpage
+     get_url:
+       url: http://192.168.225.172/test_web/index.html
+       mode: 0644
+
+   - name: Replacing the text in the HTML file
+     lineinfile:
+       path: /var/www/html/test_web
+       regexp: "paragraph"
+       line: "This is a {{ ansible_hostname }}"
+       mode: 0644
+...
+
