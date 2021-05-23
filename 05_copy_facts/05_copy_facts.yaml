@@ -1,0 +1,6 @@
+---
+- name: Get and validate the server FACTS
+  hosts: all
+  tasks:
+    - name: Get server name
+    
