@@ -19,12 +19,12 @@
 
    - name: download webpage
      get_url:
-       url: http://192.168.225.172/test_web/index.html
+       url: https://github.com/DevOpsBandhala/Tutorials/blob/main/03_install_httpd/index.html
        mode: 0644
 
    - name: Replacing the text in the HTML file
      lineinfile:
-       path: /var/www/html/test_web
+       path: /var/www/html/test_web/index.html
        regexp: "paragraph"
        line: "This is a {{ ansible_hostname }}"
        mode: 0644
