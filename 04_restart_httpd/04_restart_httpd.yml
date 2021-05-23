@@ -1,0 +1,17 @@
+---
+- name: Restart apache webserver and change the configuration.
+  hosts: master
+  tasks:
+    - name: Change the permission in httpd.conf
+      replace:
+        path: /etc/httpd/conf/httpd.conf
+        regexp: "AllowOverride None"
+        replace: "AllowOverride AuthConfig"
+        mode: 0644
+      notify:
+       - restart httpd
+  handlers:
+    - name : restart httpd service
+      service:
+        name: httpd
+        state: restarted

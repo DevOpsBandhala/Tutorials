@@ -1,6 +1,6 @@
 ---
 - name: We server Installation
-  hosts: all
+  hosts: master
   tasks:
 
    - name: Install httpd 
