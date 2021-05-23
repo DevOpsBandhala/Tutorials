@@ -28,25 +28,25 @@ This module lets you execute a shell command on the remote host:
 PLAY [First script] **************************************************************************************************************************************************************
 
 TASK [Gathering Facts] ***********************************************************************************************************************************************************
-ok: [192.168.225.200]
-ok: [192.168.225.190]
-ok: [192.168.225.180]
+ok: [192.168.XXX.XXX]
+ok: [192.168.XXX.XXX]
+ok: [192.168.XXX.XXX]
 
 TASK [Print welcome notes] *******************************************************************************************************************************************************
-ok: [192.168.225.180] => {
+ok: [192.168.XXX.XXX] => {
     "msg": "Hello Welcome to Bandhala's ansible tutorial."
 }
-ok: [192.168.225.190] => {
+ok: [192.168.XXX.XXX] => {
     "msg": "Hello Welcome to Bandhala's ansible tutorial."
 }
-ok: [192.168.225.200] => {
+ok: [192.168.XXX.XXX] => {
     "msg": "Hello Welcome to Bandhala's ansible tutorial."
 }
 
 PLAY RECAP ***********************************************************************************************************************************************************************
-192.168.225.180            : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
-192.168.225.190            : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
-192.168.225.200            : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+192.168.XXX.XXX            : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+192.168.XXX.XXX            : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+192.168.XXX.XXX            : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 
 ```
 

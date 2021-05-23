@@ -11,16 +11,16 @@
 ## my ansible  host details 
   ```
 # tail /etc/ansible/hosts
-192.168.225.200
+192.168.XXX.XXX
 
 [master]
-192.168.225.180
+192.168.XXX.XXX
 
 [webserver]
-192.168.225.190
+192.168.XXX.XXX
 
 [test]
-192.168.225.200
+192.168.XXX.XXX
 
   ```
 
