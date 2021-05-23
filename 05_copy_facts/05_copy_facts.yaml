@@ -1,6 +1,44 @@
 ---
-- name: Get and validate the server FACTS
-  hosts: all
+- name: TAG creation and experiance.
+  hosts: webserver,test
   tasks:
-    - name: Get server name
-    
+   - name: Add html file into webserver
+     command: touch /var/www/html/test_web/demo.html
+     when: inventory_hostname in groups ['webserver']
+     tags:
+      - webserver
+
+   - name: Add html file into webserver
+     lineinfile:
+       path: /var/www/html/test_web/demo.html
+       line: ' <b> Hello buddy this is demo.html page from {{ ansible_hostname }} </b> '
+     when: inventory_hostname in groups ['webserver']
+     tags:
+      - webserver
+
+   - name: Add user account in test server
+     command: useradd toweradmin; echo "toweradmin:ats4unix" | chpasswd
+     when: inventory_hostname in groups ['test']
+     tags:
+      - test
+
+   - name: Validate user account create status
+     shell: "passwd --status {{ item }} | grep SHA512"
+     register: locked_output
+     tags:
+      - test
+     with_items:
+             - toweradmin
+             - root
+     notify: unlock
+
+   - debug: var=locked_output.results
+
+
+  handlers:
+   - name: unlock
+     shell: "passwd --unlock {{ item }}"
+     when: item.changed
+     with_items: "{{ locked_output.results }}" 
+     tags:
+     - test
