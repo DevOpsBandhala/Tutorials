@@ -1,0 +1,26 @@
+---
+- name: check locked account
+  hosts: localhost
+  gather_facts: no
+  remote_user: root
+  become: no
+
+  tasks:
+  - name: Is Locked?
+    shell: "passwd --status {{ item }} | grep locked"
+    # ignore_errors: yes
+    # failed_when: false
+    register: locked_output
+    #changed_when: locked_output.rc == 0
+    with_items:
+            - user1
+            - user2
+    notify: unlock
+
+  - debug: var=locked_output.results
+
+  handlers:
+  - name: unlock
+    shell: "passwd --unlock {{ item }}"
+    when: item.changed
+    with_items: "{{ locked_output.results }}"
