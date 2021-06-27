@@ -1,6 +1,9 @@
 # Ansible Ad-Hoc commands
 
-## Important configuration file of Ansble.
+Before going to start Ansible adhoc comamnd we should learn important confiuration file of ansible.
+So before going to start  work in ansible clear about the files.
+
+### Important configuration file of Ansble.
 
 ```
 # tail /etc/ansible/hosts
@@ -10,7 +13,7 @@
 127.0.0.1
 
 ```
-## Ping command
+### Ping command
 
 ```
 #ansible test -m ping
