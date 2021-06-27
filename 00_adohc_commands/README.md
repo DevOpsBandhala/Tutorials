@@ -14,6 +14,9 @@ So before going to start  work in ansible clear about the files.
 
 ```
 ### Ping command
+  * Here ` test ` is the group name (Ansible Inverntory group), and it own only local host , if you have more server add the server IP under the Inventory group.\
+
+  *  Below the command is test server able to ping from ansible server.
 
 ```
 #ansible test -m ping
@@ -25,4 +28,15 @@ So before going to start  work in ansible clear about the files.
     "changed": false,
     "ping": "pong"
 }
+```
+
+
+### Run shell command in ansible
+
+```
+# ansible test -a "free -m"
+127.0.0.1 | CHANGED | rc=0 >>
+              total        used        free      shared  buff/cache   available
+Mem:           3789        1135        2199          42         453        2380
+Swap:          2047           0        2047
 ```
