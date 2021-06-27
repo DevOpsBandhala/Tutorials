@@ -1,0 +1,14 @@
+---
+- name: Install and Configure NTP tool.
+  hosts: test
+  become: yes
+  tasks: 
+  - name : YUM install NTP
+    yum:
+     name: ntp
+     state: present
+  - name: Enable the service
+    service:
+      name: ntpd
+      state: started
+      enabled: yes
